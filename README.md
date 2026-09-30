@@ -20,7 +20,7 @@ Vercel + Supabase 자동 개발 플로우 체험용 데모 프로젝트.
 | 영역 | 스택 |
 | --- | --- |
 | 프론트엔드 | HTML / CSS / Vanilla JS (빌드 과정 없음) |
-| 백엔드 (방명록) | Supabase (PostgREST, `guestbook` 테이블, RLS: anon SELECT·INSERT) |
+| 백엔드 (방명록) | Supabase (PostgREST, `guestbook` 테이블, RLS: anon SELECT·INSERT) — 스키마는 `supabase/schema.sql`에 보관 |
 | 호스팅 | Vercel (정적 배포) |
 | 배포 | Vercel REST API 직접 호출 (`vr deploy-files`, GitHub 자동 배포 연동 중) |
 
