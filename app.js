@@ -11,6 +11,10 @@
   document.addEventListener('wheel', function (e) {
     if (e.ctrlKey) e.preventDefault();
   }, { passive: false });
+  // 삼성 브라우저 등 touch-action을 무시하는 경우 대비: 두 손가락 제스처 원천 차단
+  document.addEventListener('touchmove', function (e) {
+    if (e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
   // 갤러리 길게 누르기 메뉴(저장) 방지
   document.getElementById('gallery').addEventListener('contextmenu', function (e) { e.preventDefault(); });
 
