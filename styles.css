@@ -13,8 +13,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   background: var(--bg);
   color: var(--ink);
-  /* 핀치줌 방지 2/3: 더블탭 줌 제거. 갤러리 이미지는 아래에서 별도 처리 */
-  touch-action: manipulation;
+  /* 핀치줌 방지 2/3: manipulation은 pinch-zoom을 포함해서 핀치가 다시 풀린다. pan만 허용 */
+  touch-action: pan-x pan-y;
   -webkit-tap-highlight-color: transparent;
 }
 .wrap { max-width: 480px; margin: 0 auto; }

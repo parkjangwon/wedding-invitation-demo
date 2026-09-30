@@ -13,7 +13,6 @@
   }, { passive: false });
   // 갤러리 길게 누르기 메뉴(저장) 방지
   document.getElementById('gallery').addEventListener('contextmenu', function (e) { e.preventDefault(); });
-  document.getElementById('viewer').addEventListener('contextmenu', function (e) { e.preventDefault(); });
 
   /* ============ D-day ============ */
   var WEDDING = new Date('2027-09-25T14:00:00+09:00');
