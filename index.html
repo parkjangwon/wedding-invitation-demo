@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!--
+  모바일 청첩장 핀치줌 방지 1/3: viewport 레벨에서 확대 자체를 막는다.
+  (iOS 10+는 접근성 이유로 user-scalable=no를 무시하므로 JS/CSS로 이중 차단)
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>박장원 ♥ 김희진 결혼합니다</title>
+<meta name="description" content="2027년 9월 25일 토요일 오후 2시, 카피바라 웨딩홀">
+<meta property="og:title" content="박장원 ♥ 김희진 결혼합니다">
+<meta property="og:description" content="2027년 9월 25일 토요일 오후 2시">
+<meta property="og:image" content="__DEPLOY_URL__/assets/main.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 히어로 -->
+<header class="hero">
+  <img src="assets/main.jpg" alt="카피바라 신랑신부" class="hero-img" draggable="false">
+  <div class="hero-overlay">
+    <p class="hero-sub">저희 결혼합니다</p>
+    <h1 class="hero-names">박장원 <span class="heart">♥</span> 김희진</h1>
+    <p class="hero-date">2027년 9월 25일 토요일 오후 2시</p>
+    <p class="hero-dday" id="dday">D-day 계산 중…</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 초대 문구 -->
+  <section class="sec reveal">
+    <p class="sec-title">초대합니다</p>
+    <p class="message">
+      평생을 함께하고 싶은 사람을 만났습니다.<br>
+      서로의 가장 편안한 안식처가 되어<br>
+      같은 방향을 보고 걸어가려 합니다.<br><br>
+      저희 두 사람의 새로운 시작을<br>
+      따뜻한 마음으로 축복해 주세요.
+    </p>
+  </section>
+
+  <!-- 신랑 신부 소개 -->
+  <section class="sec reveal">
+    <p class="sec-title">신랑 · 신부</p>
+    <div class="family">
+      <div class="family-row">
+        <span class="who">신랑</span><span class="name">박장원</span>
+        <span class="parents">아버지 박민수 · 어머니 최지연</span>
+      </div>
+      <div class="family-row">
+        <span class="who">신부</span><span class="name">김희진</span>
+        <span class="parents">아버지 김태현 · 어머니 이수진</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 갤러리: 핀치줌 차단이 핵심인 섹션 -->
+  <section class="sec reveal">
+    <p class="sec-title">갤러리</p>
+    <p class="gallery-hint">사진을 눌러 크게 보실 수 있어요</p>
+    <div class="gallery" id="gallery">
+      <img src="assets/g1.jpg" alt="이마를 맞댄 커플" draggable="false">
+      <img src="assets/g2.jpg" alt="맞잡은 손과 반지" draggable="false">
+      <img src="assets/g3.jpg" alt="노을 속 백허그" draggable="false">
+      <img src="assets/g4.jpg" alt="꽃밭에서 웃는 커플" draggable="false">
+      <img src="assets/g5.jpg" alt="한복을 입은 커플" draggable="false">
+      <img src="assets/g6.jpg" alt="스튜디오 정면 컷" draggable="false">
+    </div>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section class="sec reveal">
+    <p class="sec-title">오시는 길</p>
+    <p class="venue">카피바라 웨딩홀 3층 카피홀</p>
+    <p class="address">서울특별시 서대문구 연세로 12</p>
+    <div class="map-btns">
+      <a class="map-btn" href="https://map.naver.com/p/search/카피바라웨딩홀" target="_blank" rel="noopener">네이버지도</a>
+      <a class="map-btn" href="https://map.kakao.com/link/search/카피바라웨딩홀" target="_blank" rel="noopener">카카오맵</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=카피바라웨딩홀" target="_blank" rel="noopener">구글지도</a>
+    </div>
+    <div class="transport">
+      <p><b>지하철</b> 2호선 신촌역 3번 출구 도보 5분</p>
+      <p><b>버스</b> 연세대 정류장 하차 (간선 153 · 지선 7720)</p>
+      <p><b>주차</b> 건물 지하 1~3층 (2시간 무료)</p>
+    </div>
+  </section>
+
+  <!-- 마음 전하실 곳 -->
+  <section class="sec reveal">
+    <p class="sec-title">마음 전하실 곳</p>
+    <div class="account-card">
+      <p class="account-side">신랑측</p>
+      <p class="account-num">카카오뱅크 3333-01-2345678</p>
+      <p class="account-owner">예금주 박장원</p>
+      <button class="copy-btn" data-copy="3333012345678">계좌번호 복사</button>
+    </div>
+    <div class="account-card">
+      <p class="account-side">신부측</p>
+      <p class="account-num">토스뱅크 1000-01-234567</p>
+      <p class="account-owner">예금주 김희진</p>
+      <button class="copy-btn" data-copy="100001234567">계좌번호 복사</button>
+    </div>
+  </section>
+
+  <!-- 방명록 (Supabase) -->
+  <section class="sec reveal">
+    <p class="sec-title">방명록</p>
+    <form id="guestbook-form" class="gb-form">
+      <input type="text" id="gb-name" maxlength="20" placeholder="이름" required>
+      <textarea id="gb-message" maxlength="500" rows="3" placeholder="축하 메시지를 남겨주세요" required></textarea>
+      <button type="submit">남기기</button>
+    </form>
+    <ul id="guestbook-list" class="gb-list"></ul>
+  </section>
+
+  <!-- 공유하기 -->
+  <section class="sec reveal">
+    <p class="sec-title">공유하기</p>
+    <div class="share-btns">
+      <button id="share-btn" class="share-btn">청첩장 공유하기</button>
+      <button id="copy-link-btn" class="share-btn ghost">링크 복사</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>박장원 ♥ 김희진 의 모바일 청첩장 (데모)</p>
+  <p class="demo-note">사진 · 일시 · 장소 · 계좌는 모두 샘플입니다</p>
+</footer>
+
+<!-- 갤러리 전체화면 뷰어 (여기서도 줌 차단) -->
+<div id="viewer" class="viewer" hidden>
+  <img id="viewer-img" src="" alt="갤러리 크게 보기" draggable="false">
+  <button id="viewer-close" aria-label="닫기">✕</button>
+  <button id="viewer-prev" aria-label="이전">‹</button>
+  <button id="viewer-next" aria-label="다음">›</button>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
