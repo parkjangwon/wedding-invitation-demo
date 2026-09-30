@@ -7,9 +7,9 @@
   (iOS 10+는 접근성 이유로 user-scalable=no를 무시하므로 JS/CSS로 이중 차단)
 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>박장원 ♥ 김희진 결혼합니다</title>
+<title>박신랑 ♥ 김신부 결혼합니다</title>
 <meta name="description" content="2027년 9월 25일 토요일 오후 2시, 카피바라 웨딩홀">
-<meta property="og:title" content="박장원 ♥ 김희진 결혼합니다">
+<meta property="og:title" content="박신랑 ♥ 김신부 결혼합니다">
 <meta property="og:description" content="2027년 9월 25일 토요일 오후 2시">
 <meta property="og:image" content="https://wedding-invitation-demo-parkjangwons-projects.vercel.app/assets/main.jpg">
 <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
   <img src="assets/main.jpg" alt="카피바라 신랑신부" class="hero-img" draggable="false">
   <div class="hero-overlay">
     <p class="hero-sub">저희 결혼합니다</p>
-    <h1 class="hero-names">박장원 <span class="heart">♥</span> 김희진</h1>
+    <h1 class="hero-names">박신랑 <span class="heart">♥</span> 김신부</h1>
     <p class="hero-date">2027년 9월 25일 토요일 오후 2시</p>
     <p class="hero-dday" id="dday">D-day 계산 중…</p>
   </div>
@@ -50,11 +50,11 @@
     <p class="sec-title">신랑 · 신부</p>
     <div class="family">
       <div class="family-row">
-        <span class="who">신랑</span><span class="name">박장원</span>
+        <span class="who">신랑</span><span class="name">박신랑</span>
         <span class="parents">아버지 박민수 · 어머니 최지연</span>
       </div>
       <div class="family-row">
-        <span class="who">신부</span><span class="name">김희진</span>
+        <span class="who">신부</span><span class="name">김신부</span>
         <span class="parents">아버지 김태현 · 어머니 이수진</span>
       </div>
     </div>
@@ -63,7 +63,7 @@
   <!-- 갤러리: 핀치줌 차단이 핵심인 섹션 -->
   <section class="sec reveal">
     <p class="sec-title">갤러리</p>
-    <p class="gallery-hint">사진을 눌러 크게 보실 수 있어요</p>
+    <p class="gallery-hint">소중한 순간들을 모아봤어요</p>
     <div class="gallery" id="gallery">
       <img src="assets/g1.jpg" alt="이마를 맞댄 커플" draggable="false">
       <img src="assets/g2.jpg" alt="맞잡은 손과 반지" draggable="false">
@@ -97,13 +97,13 @@
     <div class="account-card">
       <p class="account-side">신랑측</p>
       <p class="account-num">카카오뱅크 3333-01-2345678</p>
-      <p class="account-owner">예금주 박장원</p>
+      <p class="account-owner">예금주 박신랑</p>
       <button class="copy-btn" data-copy="3333012345678">계좌번호 복사</button>
     </div>
     <div class="account-card">
       <p class="account-side">신부측</p>
       <p class="account-num">토스뱅크 1000-01-234567</p>
-      <p class="account-owner">예금주 김희진</p>
+      <p class="account-owner">예금주 김신부</p>
       <button class="copy-btn" data-copy="100001234567">계좌번호 복사</button>
     </div>
   </section>
@@ -131,17 +131,9 @@
 </main>
 
 <footer>
-  <p>박장원 ♥ 김희진 의 모바일 청첩장 (데모)</p>
+  <p>박신랑 ♥ 김신부 의 모바일 청첩장 (데모)</p>
   <p class="demo-note">사진 · 일시 · 장소 · 계좌는 모두 샘플입니다</p>
 </footer>
-
-<!-- 갤러리 전체화면 뷰어 (여기서도 줌 차단) -->
-<div id="viewer" class="viewer" hidden>
-  <img id="viewer-img" src="" alt="갤러리 크게 보기" draggable="false">
-  <button id="viewer-close" aria-label="닫기">✕</button>
-  <button id="viewer-prev" aria-label="이전">‹</button>
-  <button id="viewer-next" aria-label="다음">›</button>
-</div>
 
 <div id="toast" class="toast" hidden></div>
 

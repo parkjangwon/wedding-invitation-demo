@@ -65,33 +65,7 @@
     });
   });
 
-  /* ============ 갤러리 뷰어 (줌 차단 유지) ============ */
-  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll('#gallery img'));
-  var viewer = document.getElementById('viewer');
-  var viewerImg = document.getElementById('viewer-img');
-  var cur = 0;
-  function openViewer(i) {
-    cur = (i + galleryImgs.length) % galleryImgs.length;
-    viewerImg.src = galleryImgs[cur].src;
-    viewer.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closeViewer() { viewer.hidden = true; document.body.style.overflow = ''; }
-  galleryImgs.forEach(function (img, i) {
-    img.addEventListener('click', function () { openViewer(i); });
-  });
-  document.getElementById('viewer-close').addEventListener('click', closeViewer);
-  document.getElementById('viewer-prev').addEventListener('click', function (e) { e.stopPropagation(); openViewer(cur - 1); });
-  document.getElementById('viewer-next').addEventListener('click', function (e) { e.stopPropagation(); openViewer(cur + 1); });
-  viewer.addEventListener('click', function (e) { if (e.target === viewer) closeViewer(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) closeViewer(); });
-  // 뷰어 스와이프 (좌우 넘기기)
-  var sx = 0;
-  viewerImg.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-  viewerImg.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 50) openViewer(cur + (dx < 0 ? 1 : -1));
-  }, { passive: true });
+  /* ============ 갤러리: 확대 기능 없음 (그리드 그대로 감상) ============ */
 
   /* ============ 방명록 (Supabase REST) ============ */
   var cfg = window.INVITATION_CONFIG || {};
@@ -153,7 +127,7 @@
 
   /* ============ 공유하기 ============ */
   document.getElementById('share-btn').addEventListener('click', function () {
-    var data = { title: document.title, text: '박장원 ♥ 김희진 결혼합니다', url: location.href };
+    var data = { title: document.title, text: '박신랑 ♥ 김신부 결혼합니다', url: location.href };
     if (navigator.share) { navigator.share(data).catch(function () {}); }
     else { copyText(location.href, '청첩장 링크가 복사됐어요'); }
   });
